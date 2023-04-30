@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+    integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+
+  <title>Property Management Fees Calculator</title>
+
+</head>
+
+<body>
+  <div class="property_calculator">
+    <h1 id="header">Property Management Fees Calculator</h1>
+    <p>If you are an independent landlord like us, you have probably considered hiring a property manager for your
+      rentals. How much does a property management company charge? More importantly, how much property management fees
+      should you expect to pay? Rates vary from location to location, and you may have received different information
+      from some property managers. To find out how your expected property management fees, simply enter a few details
+      into our property management fees calculator below.</p>
+    <form>
+      <div class="row">
+        <div class="rent-monthly section">
+          <label for="monthlyRent">Property's Monthly Rent ($)</label>
+          <input type="number" id="monthlyRent" name="monthlyRent" value="1500" class='numerical'>
+        </div>
+        <div class="repair-annual section section2">
+          <label for="annualRepairs">Estimated Annual Repairs ($)</label>
+          <input type="number" id="annualRepairs" name="annualRepairs" value='2250' class="numerical">
+        </div>
+        <div class="management-fee section ">
+          <label for="managementFee">Management Fee (% of rent)</label>
+          <div class="inner_section">
+            <div id="wrapper">
+              <input type="range" value="10" class='range' id="range1" min="0" max="10">
+              <div class="dialog-box" id="dialogBox1">10</div>
+            </div>
+            <input type="number" id="managementFee" name="managementFee" value='10' class='numerical short'>
+          </div>
+        </div>
+      </div>
+     
+
+      <div class="row">
+        <div class="lease-fee section section2">
+          <label for="leaseUpFee">Lease Up Fee (% of 1 month rent)</label>
+          <div class="inner_section">
+            <div id="wrapper">
+              <input type="range" value="50" class='range' id="range2" min="0" max="100">
+              <div class="dialog-box" id="dialogBox2">10</div>
+
+            </div>
+            <input type="number" id="leaseUpFee" name="leaseUpFee" value="50" class='numerical short'>
+          </div>
+        </div>
+        <div class="annual-markup section">
+          <label for="annualMarkup">Annual Mark up On Repairs: (%)</label>
+          <div class="inner_section">
+            <div id="wrapper">
+              <input type="range" value="5" class='range' id="range3" min="0" max="10">
+              <div class="dialog-box" id="dialogBox3">5</div>
+
+            </div>
+            <input type="number" id="annualMarkup" name="annualMarkup" value="5" class='numerical short'>
+          </div>
+        </div>
+        <div class="vacancy-fee section section2">
+          <label for="vacancyFee">Vacancy Fee (%)</label>
+          <div class="inner_section">
+            <div id="wrapper">
+              <input type="range" value="10" class='range' id="range4" min="0" max="100">
+              <div class="dialog-box" id="dialogBox4">10</div>
+
+            </div>
+            <input type="number" id="vacancyFee" name="vacancyFee" value="10" class='numerical short'>
+          </div>
+        </div>
+      </div>
+
+     <a href="#result" ><button type="button" onclick="calculate()" class="calculate">Calculate</button></a>
+    </form>
+
+
+    <div class="result_div" id="result">
+      <div class="result_one r1">
+        <span class="APM_fees fee" id="apm_fees">$ 3,697.50</span> 
+        <span class="result_desc">Annual Property Management Fees per unit</span>
+      </div>
+
+      <div class="result_two r1">
+        <span class="percent_fees fee" id="percent_fee">20.54</span>
+        <span class="result_desc">Cost as % of Income</span>
+      </div>
+
+    </div>
+  </div>
+  <script src="script.js"> </script>
+
+</body>
+
+</html>
